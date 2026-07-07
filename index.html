@@ -55,7 +55,7 @@
     background:linear-gradient(135deg,var(--accent),#0e7c74); color:#fff;
     font-family:var(--serif); font-size:1rem; font-weight:700;
   }
-  .nav-links{display:flex; gap:26px; align-items:center}
+  .nav-links{display:flex; gap:24px; align-items:center}
   .nav-links a{color:var(--ink-2); font-size:.92rem; font-weight:500}
   .nav-links a:hover{color:var(--accent-d); text-decoration:none}
   .nav-cta{
@@ -75,7 +75,7 @@
   }
   .hero-grid{
     display:grid; grid-template-columns:1.35fr .9fr; gap:52px; align-items:center;
-    padding:88px 0 92px;
+    padding:80px 0 84px;
   }
   .hero h1{font-size:clamp(2.3rem,5vw,3.5rem); color:#fff; margin:.5rem 0 .2rem}
   .hero .role{font-size:1.15rem; color:#8fe4dc; font-weight:600; margin-bottom:1.1rem}
@@ -90,23 +90,47 @@
   .btn-ghost{background:rgba(255,255,255,.06); color:#eaf0f7; border-color:rgba(255,255,255,.22)}
   .btn-ghost:hover{background:rgba(255,255,255,.12); text-decoration:none}
   .btn svg{width:17px; height:17px}
+  .hero-links{display:flex; flex-wrap:wrap; gap:18px; margin-top:22px}
+  .hero-links a{display:inline-flex; align-items:center; gap:7px; color:#c4cfdd; font-size:.88rem; font-weight:500}
+  .hero-links a:hover{color:#8fe4dc; text-decoration:none}
+  .hero-links svg{width:16px; height:16px}
 
+  .hero-aside{display:flex; flex-direction:column; gap:18px}
+  .portrait{
+    display:flex; align-items:center; gap:16px;
+    background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.13);
+    border-radius:16px; padding:16px 18px;
+  }
+  .portrait img{
+    width:76px; height:76px; border-radius:14px; object-fit:cover; flex:0 0 auto;
+    border:2px solid rgba(143,228,220,.35); background:#0e2b2a;
+  }
+  .portrait .pt-name{font-weight:700; color:#fff; font-size:1.02rem}
+  .portrait .pt-sub{color:#9fb0c2; font-size:.85rem}
   .card-facts{
     background:rgba(255,255,255,.045); border:1px solid rgba(255,255,255,.13);
-    border-radius:18px; padding:26px; backdrop-filter:blur(4px);
+    border-radius:18px; padding:22px 24px; backdrop-filter:blur(4px);
   }
-  .card-facts h3{font-size:.8rem; letter-spacing:.13em; text-transform:uppercase; color:#8fe4dc; margin-bottom:16px}
-  .fact{display:flex; gap:13px; padding:11px 0; border-bottom:1px solid rgba(255,255,255,.09)}
+  .card-facts h3{font-size:.8rem; letter-spacing:.13em; text-transform:uppercase; color:#8fe4dc; margin-bottom:12px}
+  .fact{display:flex; gap:13px; padding:10px 0; border-bottom:1px solid rgba(255,255,255,.09)}
   .fact:last-child{border-bottom:0}
   .fact .ic{color:#7fded5; flex:0 0 auto; margin-top:2px}
   .fact .ic svg{width:18px; height:18px}
   .fact b{color:#fff; font-weight:600; display:block; font-size:.95rem}
   .fact span{color:#aab7c7; font-size:.86rem}
 
+  /* METRICS STRIP */
+  .metrics{background:var(--hero-1); border-top:1px solid rgba(255,255,255,.06)}
+  .metrics .wrap{display:grid; grid-template-columns:repeat(4,1fr); gap:8px; padding:26px 24px}
+  .metric{text-align:center; padding:8px 10px}
+  .metric b{display:block; font-size:clamp(1.5rem,3vw,2rem); color:#fff; font-family:var(--serif); letter-spacing:-.01em}
+  .metric span{color:#9fb0c2; font-size:.82rem; line-height:1.35; display:block; margin-top:4px}
+  .metric.divide{border-left:1px solid rgba(255,255,255,.09)}
+
   /* SECTIONS */
-  section{padding:78px 0; scroll-margin-top:74px}
+  section{padding:76px 0; scroll-margin-top:74px}
   section.soft{background:var(--bg-soft); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
-  .sec-head{max-width:44rem; margin-bottom:42px}
+  .sec-head{max-width:44rem; margin-bottom:40px}
   .sec-head h2{font-size:clamp(1.7rem,3.4vw,2.25rem); margin:.5rem 0 .6rem}
   .sec-head p{color:var(--muted); font-size:1.05rem; margin:0}
 
@@ -135,6 +159,45 @@
   .cap .capic svg{width:22px; height:22px}
   .cap h3{font-size:1.08rem; margin-bottom:8px}
   .cap p{font-size:.94rem; color:var(--muted); margin:0}
+
+  /* VISUALS / INTERACTIVE */
+  .viz-grid{display:grid; grid-template-columns:1.5fr 1fr; gap:26px; align-items:stretch}
+  .viz-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--r); padding:20px 20px 16px;
+    box-shadow:var(--shadow); position:relative;
+  }
+  .viz-card h3{font-size:1.05rem; margin-bottom:4px}
+  .viz-card .vsub{color:var(--muted); font-size:.88rem; margin-bottom:8px}
+  .viz-stage{position:relative; width:100%}
+  .viz-stage svg{width:100%; height:auto; display:block; overflow:visible}
+  .legend{display:flex; flex-wrap:wrap; gap:12px 16px; margin-top:10px}
+  .legend span{display:inline-flex; align-items:center; gap:7px; font-size:.82rem; color:var(--ink-2)}
+  .legend i{width:12px; height:12px; border-radius:50%; display:inline-block}
+  .netnode{cursor:pointer; transition:opacity .15s ease}
+  .netedge{transition:opacity .15s ease}
+  .nlabel{font-size:11px; font-weight:600; fill:#0f172a; pointer-events:none}
+  .caption{font-size:.8rem; color:var(--faint); margin-top:12px; line-height:1.5}
+  .caption a{color:var(--accent-d); font-weight:600}
+  .viz-tip{
+    position:fixed; z-index:80; pointer-events:none; opacity:0; transform:translateY(4px);
+    background:#0f172a; color:#fff; font-size:.8rem; padding:8px 11px; border-radius:8px;
+    max-width:240px; box-shadow:0 8px 24px rgba(0,0,0,.28); transition:opacity .12s ease;
+  }
+  .viz-tip b{color:#8fe4dc}
+  .bars{display:flex; align-items:flex-end; gap:16px; height:210px; padding:8px 4px 0}
+  .bar{flex:1; display:flex; flex-direction:column; align-items:center; justify-content:flex-end; height:100%}
+  .bar .col{width:100%; border-radius:7px 7px 0 0; transition:height .8s cubic-bezier(.2,.7,.2,1); min-height:2px}
+  .bar .bval{font-weight:700; font-size:.9rem; margin-bottom:6px; color:var(--ink)}
+  .bar .blab{font-size:.76rem; color:var(--muted); margin-top:8px; text-align:center; line-height:1.25}
+  .netstats{display:grid; grid-template-columns:repeat(2,1fr); gap:10px; margin-top:6px}
+  .nstat{background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:10px 12px}
+  .nstat b{display:block; font-size:1.1rem; color:var(--ink)}
+  .nstat span{font-size:.78rem; color:var(--muted)}
+  .illus-badge{display:inline-block;font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#b45309;background:#fef3c7;border:1px solid #fde68a;padding:3px 8px;border-radius:999px}
+  .toggle-btns{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 4px}
+  .tbtn{cursor:pointer;font-size:.82rem;font-weight:600;border:1px solid var(--line);background:#fff;color:var(--ink-2);padding:6px 12px;border-radius:999px;display:inline-flex;align-items:center;gap:7px;user-select:none;transition:opacity .15s ease}
+  .tbtn i{width:10px;height:10px;border-radius:50%;display:inline-block}
+  .tbtn.off{opacity:.4}
 
   /* EXPERIENCE TIMELINE */
   .tl{position:relative; margin-left:8px}
@@ -170,6 +233,7 @@
   }
   .tag-ai{background:#eef2ff; color:#4338ca}
   .tag-first{background:var(--accent-soft); color:var(--accent-d)}
+  .pub-more{margin-top:22px; font-size:.92rem}
 
   /* EDUCATION + HONORS */
   .two-col{display:grid; grid-template-columns:1.2fr 1fr; gap:44px; align-items:start}
@@ -235,11 +299,13 @@
 
   /* RESPONSIVE */
   @media (max-width:900px){
-    .hero-grid{grid-template-columns:1fr; gap:36px; padding:64px 0 68px}
-    .about-grid,.two-col{grid-template-columns:1fr; gap:30px}
+    .hero-grid{grid-template-columns:1fr; gap:32px; padding:60px 0 64px}
+    .about-grid,.two-col,.viz-grid{grid-template-columns:1fr; gap:30px}
     .cap-grid{grid-template-columns:repeat(2,1fr)}
     .skill-grid{grid-template-columns:1fr}
     .strip{grid-template-columns:1fr}
+    .metrics .wrap{grid-template-columns:repeat(2,1fr); gap:14px}
+    .metric.divide{border-left:0}
   }
   @media (max-width:640px){
     .nav-links{
@@ -266,9 +332,9 @@
     <div class="nav-links" id="navlinks">
       <a href="#about">About</a>
       <a href="#capabilities">What I do</a>
+      <a href="#visuals">Visualized</a>
       <a href="#experience">Experience</a>
       <a href="#publications">Research</a>
-      <a href="#education">Education</a>
       <a href="#contact" class="nav-cta">Get in touch</a>
     </div>
   </div>
@@ -283,28 +349,65 @@
       <p class="lede">I help healthcare teams and startups design studies that hold up and read real-world data with clinical judgment. Physician trained at Nishtar, epidemiologist trained at Emory, and a PhD candidate at the University of Michigan, with applied work spanning EHR analytics, clinical AI evaluation, and NIH and BARDA grant science.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="#contact">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" opacity="0"/><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 6l-10 7L2 6"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
           Work with me
         </a>
-        <a class="btn btn-ghost" href="#publications">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-          Selected research
+        <a class="btn btn-ghost" href="#visuals">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg>
+          See the work
         </a>
         <a class="btn btn-ghost" href="cv.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="M7 10l5 5 5-5"/><path d="M12 15V3"/></svg>
           Download CV
         </a>
       </div>
+      <div class="hero-links">
+        <a href="https://www.linkedin.com/in/mziaulh" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4zM8.5 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-6.9c0-1.64-.03-3.75-2.29-3.75-2.29 0-2.64 1.79-2.64 3.63V24h-4z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://scholar.google.com/citations?user=LPSbIR0AAAAJ" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zM5 13.18v3.32L12 21l7-4.5v-3.32L12 18l-7-4.82z"/></svg>
+          Google Scholar
+        </a>
+        <a href="https://github.com/mziaulh" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.6 5.6.6 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 016 0C17.3 5 18.3 5.3 18.3 5.3c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.6.8.5 4.6-1.5 7.9-5.8 7.9-10.9C23.4 5.6 18.3.5 12 .5z"/></svg>
+          GitHub
+        </a>
+        <a href="mailto:muhammad.zia@fulbrightmail.org">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
+          Email
+        </a>
+      </div>
     </div>
-    <aside class="card-facts reveal in">
-      <h3>At a glance</h3>
-      <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><b>Ann Arbor, Michigan</b><span>Remote and on-site engagements</span></div></div>
-      <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><div><b>PhD candidate, Epidemiology</b><span>University of Michigan &middot; Rackham Merit Fellow</span></div></div>
-      <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><div><b>Research Strategy Advisor</b><span>Switchboard, MD &middot; EHR and real-world data</span></div></div>
-      <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><div><b>MD &middot; MPH</b><span>Nishtar Medical University &middot; Emory Rollins</span></div></div>
+    <aside class="hero-aside reveal in">
+      <div class="portrait">
+        <img src="assets/zia.jpg" alt="Muhammad Zia ul Haq" loading="lazy"
+             onerror="this.onerror=null;this.src='https://sph.umich.edu/cseph/who-we-are/students/images/Zia%20Ul%20Haq.jpg';" />
+        <div>
+          <div class="pt-name">Muhammad Zia ul Haq, MD, MPH</div>
+          <div class="pt-sub">Physician &middot; Epidemiologist &middot; Ann Arbor, MI</div>
+        </div>
+      </div>
+      <div class="card-facts">
+        <h3>At a glance</h3>
+        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></span><div><b>PhD candidate, Epidemiology</b><span>University of Michigan &middot; Rackham Merit Fellow</span></div></div>
+        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></span><div><b>Research Strategy Advisor</b><span>Switchboard, MD &middot; EHR and real-world data</span></div></div>
+        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></span><div><b>MD &middot; MPH</b><span>Nishtar Medical University &middot; Emory Rollins</span></div></div>
+        <div class="fact"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><b>Available for advisory work</b><span>Remote and on-site engagements</span></div></div>
+      </div>
     </aside>
   </div>
 </header>
+
+<div class="metrics">
+  <div class="wrap">
+    <div class="metric"><b>144,369</b><span>EHR messages mapped in a peer-reviewed clinical-communication network study</span></div>
+    <div class="metric divide"><b>47,460</b><span>patients across 85 specialties in that network</span></div>
+    <div class="metric divide"><b>2M+</b><span>unstructured EHR encounters analyzed with R, Python, and Neo4j</span></div>
+    <div class="metric divide"><b>6</b><span>graduate students and residents mentored, yielding 3 publications</span></div>
+  </div>
+</div>
 
 <section id="about">
   <div class="wrap">
@@ -368,7 +471,48 @@
   </div>
 </section>
 
-<section id="experience">
+<section id="visuals">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="eyebrow">Research, visualized</div>
+      <h2>What real-world data looks like when you map it</h2>
+      <p>Both panels are drawn from my peer-reviewed study of clinical messaging at a large academic health system. Hover the network to trace how message load moves between roles. Every number is from the published paper.</p>
+    </div>
+    <div class="viz-grid">
+      <div class="viz-card reveal">
+        <h3>The clinical communication network</h3>
+        <div class="vsub">Directed message flow between roles. Node size scales with message volume; edge width scales with the number of messages sent.</div>
+        <div class="viz-stage"><svg id="netsvg" viewBox="0 0 780 470" role="img" aria-label="Directed network of EHR messages between patients, nurses, support staff, physicians and non-physician practitioners"></svg></div>
+        <div class="legend" id="netlegend"></div>
+        <div class="caption">Recreated from the reported role-level message counts in Zia ul Haq M, Hornback A, Harzand A, et al. <i>Graph theoretic visualization of patient and health worker messaging in the EHR.</i> Front Artif Intell. 2024;7:1422208. Data via PubMed. <a href="https://doi.org/10.3389/frai.2024.1422208" target="_blank" rel="noopener">doi:10.3389/frai.2024.1422208</a></div>
+      </div>
+      <div class="viz-card reveal">
+        <h3>Message burden by role</h3>
+        <div class="vsub">Average message touches per health-worker type. Nurses and assistants absorb the heaviest load.</div>
+        <div class="bars" id="barchart"></div>
+        <div class="netstats">
+          <div class="nstat"><b>76,694</b><span>clinical conversations</span></div>
+          <div class="nstat"><b>3,749</b><span>health workers</span></div>
+          <div class="nstat"><b>2.10</b><span>average network degree</span></div>
+          <div class="nstat"><b>0.40</b><span>network modularity</span></div>
+        </div>
+        <div class="caption">Average touches per role and network statistics from the same study. Data via PubMed. <a href="https://doi.org/10.3389/frai.2024.1422208" target="_blank" rel="noopener">doi:10.3389/frai.2024.1422208</a></div>
+      </div>
+    </div>
+    <div class="viz-card reveal" style="margin-top:26px">
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        <h3 style="margin:0">Modeling longitudinal recovery after stroke</h3>
+        <span class="illus-badge">Illustrative</span>
+      </div>
+      <div class="vsub">The shape of the question my dissertation asks: how functional recovery unfolds over the year after an intracerebral hemorrhage, and how trajectories separate across groups. Toggle a group on or off; hover a point.</div>
+      <div class="toggle-btns" id="recToggles"></div>
+      <div class="viz-stage"><svg id="recsvg" viewBox="0 0 780 360" role="img" aria-label="Illustrative functional recovery trajectories over twelve months by age group"></svg></div>
+      <div class="caption"><b>Synthetic data for illustration, not study results.</b> A schematic of the mixed-effects trajectory modeling (marginal structural models, inverse probability weighting) behind the BASIC study analysis. Real estimates appear in Zia ul Haq M, Kwicklis M, Zahuranec DB, Morgenstern LB, Lisabeth LD. <i>Circulation.</i> 2025;151(Suppl 1):P3177. <a href="https://doi.org/10.1161/cir.151.suppl_1.P3177" target="_blank" rel="noopener">doi:10.1161/cir.151.suppl_1.P3177</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="experience" class="soft">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">Experience</div>
@@ -378,51 +522,58 @@
     <div class="tl">
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
-        <h3>Research Strategy Advisor</h3>
-        <div class="tl-org">Switchboard, MD LLC &middot; Remote</div>
-        <div class="tl-meta"><span>Jul 2022 &ndash; Present</span><span class="sep">/</span><span>Health-tech</span></div>
-        <p>Build R and Python pipelines to clean, categorize, and visualize large EHR and revenue-cycle datasets, surfacing patterns in clinical messaging and medication use for quality improvement. Contribute the epidemiologic design and methods writing for NIH and BARDA proposals on integrating AI and real-world data into clinical workflows.</p>
-      </div>
-      <div class="tl-item reveal">
-        <div class="tl-dot"></div>
-        <h3>Consultant, NCD Epidemiology &amp; Policy</h3>
-        <div class="tl-org">World Health Organization &middot; Western Pacific &amp; Eastern Mediterranean Offices</div>
-        <div class="tl-meta"><span>Jan 2023 &ndash; Oct 2024</span><span class="sep">/</span><span>Multilateral</span></div>
-        <p>Synthesized IHME GBD, WHO, and national survey data into NCD country profiles for member states including Yemen, Tonga, and Fiji, informing policy frameworks. Designed multinational survey analyses that addressed confounding and bias, and authored technical briefs on NCD management in emergency and fragile settings.</p>
+        <h3>Research Strategy Advisor (Consultant)</h3>
+        <div class="tl-org">Switchboard, MD &middot; Ann Arbor / Remote</div>
+        <div class="tl-meta"><span>Jun 2022 &ndash; Present</span><span class="sep">/</span><span>Health-tech</span></div>
+        <p>Lead research and data strategy at a digital-health startup building AI for clinical workflows and the healthcare revenue cycle. Advise on real-world-data analytics with graph databases (Neo4j) over structured and unstructured EHR data, co-led the technical design and grant writing for a multi-million-dollar BARDA proposal to integrate AI and real-world data into clinical workflows, contribute to NIH proposals, mentor junior staff, and co-author manuscripts on AI in public health.</p>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <h3>Senior Instructor</h3>
-        <div class="tl-org">Aga Khan University &middot; Dept. of Community Health Sciences, Karachi</div>
-        <div class="tl-meta"><span>Sep 2023 &ndash; Jul 2024</span><span class="sep">/</span><span>Academic</span></div>
-        <p>Led curriculum and teaching for graduate courses in protocol development, critical appraisal, and data management. Co-led the successful acquisition of two NIH research grants through study design and protocol writing, and mentored four master's students and two clinical residents on cardiovascular and real-world-data theses.</p>
+        <div class="tl-org">Aga Khan University &middot; Karachi, Pakistan</div>
+        <div class="tl-meta"><span>Sep 2023 &ndash; Jun 2024</span><span class="sep">/</span><span>Academic</span></div>
+        <p>Developed and taught graduate curriculum in study design, real-world-data analysis, and critical appraisal for more than 30 students. Co-led study design and protocol writing for two successful NIH research-grant acquisitions in cardiovascular epidemiology, and mentored six master's students and clinical residents on real-world-data theses, yielding three peer-reviewed publications.</p>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
-        <h3>Graduate Research Associate</h3>
-        <div class="tl-org">Morningside Center for Innovative &amp; Affordable Medicine &middot; Atlanta</div>
-        <div class="tl-meta"><span>Jul 2020 &ndash; Dec 2021</span><span class="sep">/</span><span>Research</span></div>
-        <p>Core team member on a curated database of FDA-approved drugs for cancer repurposing. Evaluated and synthesized evidence from more than 700 clinical and observational studies, authored 300-plus article summaries, and independently built REDCap instruments for structured data annotation and quality control.</p>
+        <h3>Consultant &amp; EMRO Fellow, Non-Communicable Diseases</h3>
+        <div class="tl-org">World Health Organization &middot; Eastern Mediterranean (Cairo) &amp; Western Pacific Offices</div>
+        <div class="tl-meta"><span>Jan 2023 &ndash; Oct 2024</span><span class="sep">/</span><span>Multilateral</span></div>
+        <p>Supported implementation of WHO Technical Packages and the Regional Framework for Action on Diabetes and Rheumatic Heart Disease across Eastern Mediterranean Region countries, and authored a technical report and policy briefs on non-communicable-disease management in emergency settings. Synthesized IHME GBD, WHO, and national survey data into NCD country profiles for member states including Yemen, Tonga, and Fiji, addressing confounding and bias in the multinational analyses.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <h3>Graduate Research Assistant</h3>
+        <div class="tl-org">Emory University School of Medicine &middot; Atlanta</div>
+        <div class="tl-meta"><span>Nov 2020 &ndash; Dec 2021</span><span class="sep">/</span><span>Research</span></div>
+        <p>Built the evidence base for a database of FDA-approved drugs repurposed for cancer, first assembled at the Morningside Center for Innovative and Affordable Medicine. Designed abstraction protocols, ran structured literature searches, appraised safety and efficacy (quality of life, progression-free and overall survival, response rate) across hundreds of studies, and independently built REDCap instruments for annotation and quality control.</p>
+      </div>
+      <div class="tl-item reveal">
+        <div class="tl-dot"></div>
+        <h3>Senior Medical Officer</h3>
+        <div class="tl-org">Primary &amp; Secondary Healthcare Department &middot; Rawalpindi, Pakistan</div>
+        <div class="tl-meta"><span>Sep 2018 &ndash; Jul 2019</span><span class="sep">/</span><span>Public health</span></div>
+        <p>Led disease-prevention work including surveillance, EPI immunization, and polio-eradication activity at the community level. Oversaw frontline health-worker performance and record-keeping, established diagnoses, and managed referral to secondary care.</p>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
         <h3>Investigator</h3>
-        <div class="tl-org">Emory Global Health Initiative &middot; Atlanta</div>
+        <div class="tl-org">Emory Global Health Initiative &middot; Atlanta &amp; Pakistan</div>
         <div class="tl-meta"><span>Jun 2018 &ndash; Jul 2019</span><span class="sep">/</span><span>Global health</span></div>
-        <p>Supervised development of a prehospital assessment and transport smartphone app for trauma triage, and established a trauma referral network and registry with Pakistani and U.S. stakeholders.</p>
+        <p>Supervised development of a prehospital assessment and transport smartphone application for trauma triage, and established a trauma referral network and registry with Pakistani and United States stakeholders.</p>
       </div>
       <div class="tl-item reveal">
         <div class="tl-dot"></div>
-        <h3>Staff Physician (House Officer)</h3>
-        <div class="tl-org">Nishtar Hospital &middot; Multan</div>
+        <h3>House Officer</h3>
+        <div class="tl-org">Nishtar Medical University &middot; Multan</div>
         <div class="tl-meta"><span>May 2017 &ndash; May 2018</span><span class="sep">/</span><span>Clinical</span></div>
-        <p>Managed inpatient and outpatient care across medical and surgical units, supported emergency triage and critical-care rounds, and incorporated behavioral-health frameworks into management plans.</p>
+        <p>Managed inpatient and outpatient care across medical and surgical units, with rotations in neurosurgery and psychiatry, reinforcing clinical rigor and diagnostic reasoning.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="publications" class="soft">
+<section id="publications">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">Research</div>
@@ -480,10 +631,11 @@
         </div>
       </div>
     </div>
+    <p class="pub-more muted">Full list and citation metrics on <a href="https://scholar.google.com/citations?user=LPSbIR0AAAAJ" target="_blank" rel="noopener">Google Scholar</a>.</p>
   </div>
 </section>
 
-<section id="education">
+<section id="education" class="soft">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">Education &amp; recognition</div>
@@ -512,8 +664,8 @@
           <div class="badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
           <div>
             <h3>Nishtar Medical University</h3>
-            <div class="deg">MBBS (Doctor of Medicine) &middot; Top quartile</div>
-            <div class="yr">Multan &middot; Feb 2017</div>
+            <div class="deg">MBBS (Bachelor of Medicine, Bachelor of Surgery)</div>
+            <div class="yr">Multan &middot; 2016 &middot; House Officer 2017&ndash;18</div>
           </div>
         </div>
       </div>
@@ -530,7 +682,7 @@
   </div>
 </section>
 
-<section id="skills" class="soft">
+<section id="skills">
   <div class="wrap">
     <div class="sec-head reveal">
       <div class="eyebrow">Toolkit</div>
@@ -610,9 +762,13 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
           muhammad.zia@fulbrightmail.org
         </a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/muhammad-zia-ul-haq" target="_blank" rel="noopener">
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/mziaulh" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.5 8h4V24h-4zM8.5 8h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1V24h-4v-6.9c0-1.64-.03-3.75-2.29-3.75-2.29 0-2.64 1.79-2.64 3.63V24h-4z"/></svg>
-          LinkedIn
+          linkedin.com/in/mziaulh
+        </a>
+        <a class="btn btn-ghost" href="https://scholar.google.com/citations?user=LPSbIR0AAAAJ" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L1 9l11 7 9-5.73V17h2V9L12 2zM5 13.18v3.32L12 21l7-4.5v-3.32L12 18l-7-4.82z"/></svg>
+          Google Scholar
         </a>
       </div>
     </div>
@@ -622,9 +778,11 @@
 <footer>
   <div class="wrap foot-in">
     <span>&copy; <span id="yr"></span> Muhammad Zia ul Haq &middot; MD, MPH</span>
-    <span>Ann Arbor, Michigan &middot; <a href="mailto:muhammad.zia@fulbrightmail.org">Email</a></span>
+    <span>Ann Arbor, Michigan &middot; <a href="https://www.linkedin.com/in/mziaulh" target="_blank" rel="noopener">LinkedIn</a> &middot; <a href="https://github.com/mziaulh" target="_blank" rel="noopener">GitHub</a> &middot; <a href="mailto:muhammad.zia@fulbrightmail.org">Email</a></span>
   </div>
 </footer>
+
+<div class="viz-tip" id="viztip"></div>
 
 <script>
   document.getElementById('yr').textContent = new Date().getFullYear();
@@ -633,6 +791,7 @@
   burger.addEventListener('click', function(){ links.classList.toggle('open'); });
   links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ links.classList.remove('open'); }); });
 
+  /* ---------- reveal on scroll ---------- */
   (function(){
     var els = [].slice.call(document.querySelectorAll('.reveal'));
     function reveal(el){ el.classList.add('in'); }
@@ -648,10 +807,231 @@
       }, {threshold:0, rootMargin:'0px 0px -6% 0px'});
       els.forEach(function(el){ io.observe(el); });
     }
-    // Fallbacks so no section is ever stuck hidden (fast scroll, anchor jumps, older browsers)
     ['load','scroll','resize','hashchange'].forEach(function(ev){ window.addEventListener(ev, check, {passive:true}); });
     check();
     setTimeout(check, 250);
+  })();
+
+  /* ---------- interactive network (real data from Front Artif Intell 2024;7:1422208) ---------- */
+  (function(){
+    var svg = document.getElementById('netsvg');
+    if(!svg) return;
+    var NS = 'http://www.w3.org/2000/svg';
+    var tip = document.getElementById('viztip');
+
+    var nodes = {
+      patients:   {label:'Patients',        color:'#166534', x:150, y:250, vol:300, note:'119,444 messages sent to care teams'},
+      npp:        {label:'NPP',              color:'#ef4444', x:300, y:88,  vol:241, note:'Non-physician practitioners: avg 241 touches, 93% CC’ed'},
+      nurses:     {label:'Nurses / CNA / MA',color:'#db2777', x:475, y:160, vol:350, note:'Avg 350 touches; highest closeness centrality (0.51 receiving)'},
+      support:    {label:'Support staff',    color:'#16a34a', x:475, y:355, vol:155, note:'Central conduit; balanced CC’ed and responded'},
+      physicians: {label:'Physicians',       color:'#2563eb', x:668, y:255, vol:166, note:'Avg 166 touches; 88% of messages were CC’ed'}
+    };
+    var edges = [
+      {s:'patients', t:'nurses',     c:53149, curve:34},
+      {s:'patients', t:'support',    c:34784, curve:-34},
+      {s:'patients', t:'physicians', c:31511, curve:0},
+      {s:'support',  t:'nurses',     c:63811, curve:26},
+      {s:'support',  t:'physicians', c:42173, curve:24},
+      {s:'nurses',   t:'physicians', c:36244, curve:22},
+      {s:'nurses',   t:'support',    c:39517, curve:-26},
+      {s:'npp',      t:'nurses',     c:40791, curve:20}
+    ];
+    var minC=31511, maxC=63811;
+    function ew(c){ return 2 + (c-minC)/(maxC-minC)*11; }
+    function nr(v){ return 13 + Math.sqrt(v)*1.28; }
+
+    // arrowhead markers, one per source color
+    var defs = document.createElementNS(NS,'defs');
+    var markerId = {};
+    var colorsUsed = {};
+    edges.forEach(function(e){ colorsUsed[nodes[e.s].color]=1; });
+    Object.keys(colorsUsed).forEach(function(col,i){
+      var id = 'arw'+i;
+      markerId[col] = id;
+      var m = document.createElementNS(NS,'marker');
+      m.setAttribute('id',id); m.setAttribute('viewBox','0 0 10 10');
+      m.setAttribute('refX','9'); m.setAttribute('refY','5');
+      m.setAttribute('markerWidth','7'); m.setAttribute('markerHeight','7');
+      m.setAttribute('orient','auto-start-reverse');
+      var p = document.createElementNS(NS,'path');
+      p.setAttribute('d','M0 0 L10 5 L0 10 z'); p.setAttribute('fill',col);
+      m.appendChild(p); defs.appendChild(m);
+    });
+    svg.appendChild(defs);
+
+    function pathFor(e){
+      var a=nodes[e.s], b=nodes[e.t];
+      var mx=(a.x+b.x)/2, my=(a.y+b.y)/2;
+      var dx=b.x-a.x, dy=b.y-a.y, len=Math.sqrt(dx*dx+dy*dy)||1;
+      var nx=-dy/len, ny=dx/len;
+      var cx=mx+nx*e.curve, cy=my+ny*e.curve;
+      // trim endpoints to node edges
+      var ra=nr(a.vol)+2, rb=nr(b.vol)+8;
+      var a1x=a.x+(cx-a.x)/dist(a.x,a.y,cx,cy)*ra;
+      var a1y=a.y+(cy-a.y)/dist(a.x,a.y,cx,cy)*ra;
+      var b1x=b.x+(cx-b.x)/dist(b.x,b.y,cx,cy)*rb;
+      var b1y=b.y+(cy-b.y)/dist(b.x,b.y,cx,cy)*rb;
+      return 'M'+a1x+' '+a1y+' Q'+cx+' '+cy+' '+b1x+' '+b1y;
+    }
+    function dist(x1,y1,x2,y2){ return Math.sqrt((x2-x1)*(x2-x1)+(y2-y1)*(y2-y1))||1; }
+
+    var edgeEls=[];
+    var gEdges=document.createElementNS(NS,'g');
+    svg.appendChild(gEdges);
+    edges.forEach(function(e){
+      var col=nodes[e.s].color;
+      var p=document.createElementNS(NS,'path');
+      p.setAttribute('d',pathFor(e));
+      p.setAttribute('fill','none');
+      p.setAttribute('stroke',col);
+      p.setAttribute('stroke-width',ew(e.c));
+      p.setAttribute('stroke-opacity','.42');
+      p.setAttribute('stroke-linecap','round');
+      p.setAttribute('marker-end','url(#'+markerId[col]+')');
+      p.setAttribute('class','netedge');
+      p.dataset.s=e.s; p.dataset.t=e.t;
+      p.addEventListener('mousemove',function(ev){ showTip(ev, '<b>'+nodes[e.s].label+' → '+nodes[e.t].label+'</b><br>'+e.c.toLocaleString()+' messages sent'); });
+      p.addEventListener('mouseleave',hideTip);
+      gEdges.appendChild(p);
+      edgeEls.push({el:p,e:e});
+    });
+
+    var gNodes=document.createElementNS(NS,'g');
+    svg.appendChild(gNodes);
+    Object.keys(nodes).forEach(function(k){
+      var n=nodes[k];
+      var g=document.createElementNS(NS,'g');
+      g.setAttribute('class','netnode'); g.dataset.k=k;
+      var c=document.createElementNS(NS,'circle');
+      c.setAttribute('cx',n.x); c.setAttribute('cy',n.y); c.setAttribute('r',nr(n.vol));
+      c.setAttribute('fill',n.color); c.setAttribute('fill-opacity','.9');
+      c.setAttribute('stroke','#fff'); c.setAttribute('stroke-width','2.5');
+      g.appendChild(c);
+      var t=document.createElementNS(NS,'text');
+      t.setAttribute('x',n.x); t.setAttribute('y',n.y+nr(n.vol)+14);
+      t.setAttribute('text-anchor','middle'); t.setAttribute('class','nlabel');
+      t.textContent=n.label;
+      g.appendChild(t);
+      g.addEventListener('mousemove',function(ev){ showTip(ev,'<b>'+n.label+'</b><br>'+n.note); });
+      g.addEventListener('mouseenter',function(){ focus(k); });
+      g.addEventListener('mouseleave',function(){ hideTip(); unfocus(); });
+      gNodes.appendChild(g);
+    });
+
+    function focus(k){
+      edgeEls.forEach(function(o){
+        var on = (o.e.s===k||o.e.t===k);
+        o.el.setAttribute('stroke-opacity', on? '.9':'.08');
+        o.el.setAttribute('stroke-width', on? (ew(o.e.c)+1):ew(o.e.c));
+      });
+      [].forEach.call(gNodes.children,function(g){
+        g.style.opacity = (g.dataset.k===k || connected(k,g.dataset.k))? '1':'.28';
+      });
+    }
+    function connected(a,b){ return edges.some(function(e){ return (e.s===a&&e.t===b)||(e.s===b&&e.t===a); }); }
+    function unfocus(){
+      edgeEls.forEach(function(o){ o.el.setAttribute('stroke-opacity','.42'); o.el.setAttribute('stroke-width',ew(o.e.c)); });
+      [].forEach.call(gNodes.children,function(g){ g.style.opacity='1'; });
+    }
+    function showTip(ev,html){ tip.innerHTML=html; tip.style.opacity='1'; tip.style.left=(ev.clientX+14)+'px'; tip.style.top=(ev.clientY+14)+'px'; }
+    function hideTip(){ tip.style.opacity='0'; }
+
+    // legend
+    var lg=document.getElementById('netlegend');
+    Object.keys(nodes).forEach(function(k){
+      var n=nodes[k];
+      var s=document.createElement('span');
+      s.innerHTML='<i style="background:'+n.color+'"></i>'+n.label;
+      lg.appendChild(s);
+    });
+  })();
+
+  /* ---------- bar chart: average message touches by role ---------- */
+  (function(){
+    var wrap=document.getElementById('barchart');
+    if(!wrap) return;
+    var data=[
+      {label:'Nurses / CNA / MA', v:350, color:'#db2777'},
+      {label:'NPP', v:241, color:'#ef4444'},
+      {label:'Physicians', v:166, color:'#2563eb'},
+      {label:'Support staff', v:155, color:'#16a34a'}
+    ];
+    var max=380;
+    data.forEach(function(d){
+      var b=document.createElement('div'); b.className='bar';
+      var val=document.createElement('div'); val.className='bval'; val.textContent=d.v;
+      var col=document.createElement('div'); col.className='col'; col.style.background=d.color; col.style.height='2px';
+      var lab=document.createElement('div'); lab.className='blab'; lab.textContent=d.label;
+      b.appendChild(val); b.appendChild(col); b.appendChild(lab); wrap.appendChild(b);
+      setTimeout(function(){ col.style.height=Math.round(d.v/max*175)+'px'; },120);
+    });
+  })();
+
+  /* ---------- illustrative: longitudinal recovery trajectories (synthetic) ---------- */
+  (function(){
+    var svg=document.getElementById('recsvg'); if(!svg) return;
+    var NS='http://www.w3.org/2000/svg';
+    var tip=document.getElementById('viztip');
+    var months=[0,1,3,6,12];
+    var groups=[
+      {name:'Age <60',   color:'#2563eb', on:true, y:[8,30,58,76,86]},
+      {name:'Age 60–75', color:'#db2777', on:true, y:[7,22,44,60,70]},
+      {name:'Age >75',   color:'#16a34a', on:true, y:[6,16,32,45,54]}
+    ];
+    var L=56,R=18,T=18,B=48,W=780,H=360, pw=W-L-R, ph=H-T-B;
+    function xf(m){ return L+(m/12)*pw; }
+    function yf(v){ return T+(1-v/100)*ph; }
+    function draw(){
+      while(svg.firstChild) svg.removeChild(svg.firstChild);
+      [0,25,50,75,100].forEach(function(t){
+        var y=yf(t);
+        var ln=document.createElementNS(NS,'line');
+        ln.setAttribute('x1',L); ln.setAttribute('x2',L+pw); ln.setAttribute('y1',y); ln.setAttribute('y2',y);
+        ln.setAttribute('stroke','#e6e9ef'); ln.setAttribute('stroke-width','1'); svg.appendChild(ln);
+        var tx=document.createElementNS(NS,'text');
+        tx.setAttribute('x',L-10); tx.setAttribute('y',y+4); tx.setAttribute('text-anchor','end');
+        tx.setAttribute('font-size','11'); tx.setAttribute('fill','#8a94a3'); tx.textContent=t; svg.appendChild(tx);
+      });
+      months.forEach(function(m){
+        var tx=document.createElementNS(NS,'text');
+        tx.setAttribute('x',xf(m)); tx.setAttribute('y',T+ph+22); tx.setAttribute('text-anchor','middle');
+        tx.setAttribute('font-size','11'); tx.setAttribute('fill','#8a94a3'); tx.textContent=m; svg.appendChild(tx);
+      });
+      var xl=document.createElementNS(NS,'text');
+      xl.setAttribute('x',L+pw/2); xl.setAttribute('y',H-8); xl.setAttribute('text-anchor','middle');
+      xl.setAttribute('font-size','12'); xl.setAttribute('fill','#5b6675'); xl.setAttribute('font-weight','600');
+      xl.textContent='Months since hemorrhage'; svg.appendChild(xl);
+      var yl=document.createElementNS(NS,'text');
+      yl.setAttribute('transform','rotate(-90 16 '+(T+ph/2)+')'); yl.setAttribute('x',16); yl.setAttribute('y',T+ph/2);
+      yl.setAttribute('text-anchor','middle'); yl.setAttribute('font-size','12'); yl.setAttribute('fill','#5b6675'); yl.setAttribute('font-weight','600');
+      yl.textContent='Functional recovery index'; svg.appendChild(yl);
+      groups.forEach(function(g){
+        if(!g.on) return;
+        var d='';
+        g.y.forEach(function(v,i){ d+=(i?'L':'M')+xf(months[i])+' '+yf(v)+' '; });
+        var p=document.createElementNS(NS,'path');
+        p.setAttribute('d',d); p.setAttribute('fill','none'); p.setAttribute('stroke',g.color);
+        p.setAttribute('stroke-width','3'); p.setAttribute('stroke-linecap','round'); p.setAttribute('stroke-linejoin','round');
+        svg.appendChild(p);
+        g.y.forEach(function(v,i){
+          var c=document.createElementNS(NS,'circle');
+          c.setAttribute('cx',xf(months[i])); c.setAttribute('cy',yf(v)); c.setAttribute('r','5');
+          c.setAttribute('fill','#fff'); c.setAttribute('stroke',g.color); c.setAttribute('stroke-width','2.5');
+          c.style.cursor='pointer';
+          c.addEventListener('mousemove',function(ev){ tip.innerHTML='<b>'+g.name+'</b><br>month '+months[i]+': index '+v; tip.style.opacity='1'; tip.style.left=(ev.clientX+14)+'px'; tip.style.top=(ev.clientY+14)+'px'; });
+          c.addEventListener('mouseleave',function(){ tip.style.opacity='0'; });
+          svg.appendChild(c);
+        });
+      });
+    }
+    var tb=document.getElementById('recToggles');
+    groups.forEach(function(g){
+      var b=document.createElement('span'); b.className='tbtn';
+      b.innerHTML='<i style="background:'+g.color+'"></i>'+g.name;
+      b.addEventListener('click',function(){ g.on=!g.on; b.classList.toggle('off',!g.on); draw(); });
+      tb.appendChild(b);
+    });
+    draw();
   })();
 </script>
 </body>
