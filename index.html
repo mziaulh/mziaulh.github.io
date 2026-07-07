@@ -633,14 +633,26 @@
   burger.addEventListener('click', function(){ links.classList.toggle('open'); });
   links.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ links.classList.remove('open'); }); });
 
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-    }, {threshold:.12});
-    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
-  } else {
-    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
-  }
+  (function(){
+    var els = [].slice.call(document.querySelectorAll('.reveal'));
+    function reveal(el){ el.classList.add('in'); }
+    function inView(el){
+      var r = el.getBoundingClientRect();
+      var vh = window.innerHeight || document.documentElement.clientHeight;
+      return r.top < vh * 0.95 && r.bottom > 0;
+    }
+    function check(){ els.forEach(function(el){ if(!el.classList.contains('in') && inView(el)){ reveal(el); } }); }
+    if('IntersectionObserver' in window){
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if(e.isIntersecting){ reveal(e.target); io.unobserve(e.target); } });
+      }, {threshold:0, rootMargin:'0px 0px -6% 0px'});
+      els.forEach(function(el){ io.observe(el); });
+    }
+    // Fallbacks so no section is ever stuck hidden (fast scroll, anchor jumps, older browsers)
+    ['load','scroll','resize','hashchange'].forEach(function(ev){ window.addEventListener(ev, check, {passive:true}); });
+    check();
+    setTimeout(check, 250);
+  })();
 </script>
 </body>
 </html>
